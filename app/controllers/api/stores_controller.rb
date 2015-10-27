@@ -19,6 +19,15 @@ module API
       end
     end
 
+    def update
+      store = Store.find(params[:id])
+      if store.update(store_params)
+        render json: store, status: 200
+      else
+        render json: store.errors, status: 422
+      end
+    end
+
     private
       def store_params
         params.require(:store).permit(:name, :places_id, :rating)
