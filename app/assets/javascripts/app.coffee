@@ -1,2 +1,0 @@
-tacoYelp = angular.module('tacoYelp',[
-])

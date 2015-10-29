@@ -1,8 +1,8 @@
 module API
   class StoresController < ApplicationController
     def index
-      stores = Store.all
-      render json: stores, status: :ok
+      @stores = Store.all
+      render json: @stores
     end
 
     def show
